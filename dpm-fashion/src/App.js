@@ -16,9 +16,9 @@ export default function App() {
         shadows
         onCreated={(state) => state.events.connect(overlay.current)}
         raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}>
-        <ambientLight intensity={1} />
+        <ambientLight intensity={0.8} />
        
-       <Suspense fallback={null}>
+       <Suspense fallback={<Html><img className="fuse" src="https://samherbert.net/svg-loaders/svg-loaders/puff.svg" alt="Loading" />`</Html>}>
           <Avatar scroll={scroll} />
           <Environment preset="city" />
         </Suspense>
