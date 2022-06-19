@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber"
 import { Environment, Html } from "@react-three/drei"
 import Avatar from "./avatar"
 import Overlay from "./overlay"
+import Loader from "./loader.svg"
 import './App.css'
 
 
@@ -18,7 +19,7 @@ export default function App() {
         raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}>
         <ambientLight intensity={0.8} />
        
-       <Suspense fallback={<Html><img className="fuse" src="https://samherbert.net/svg-loaders/svg-loaders/puff.svg" alt="Loading" />`</Html>}>
+       <Suspense fallback={<Html><img className="fuse" src={Loader} alt="Loading" /></Html>}>
           <Avatar scroll={scroll} />
           <Environment preset="city" />
         </Suspense>
